@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stadterest</title>
+    <link rel="shortcut icon" href="./images/2.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <img src="./images/Stadterest-Logo1.png" id="bigLogo" width="160px" height="80px" alt="logo">
+            <img src="./images/2.png" class ="smallLogo" width="80px" height="60px" alt="logo">
+            <input class="searchbar" type="search" placeholder="Search anything here..."></input>
+            <a class="btn" >Login</a>
+        </nav>
+    </header>
+    <div id="fullScreenOverlay">
+        <span id="closeButton" onclick="closeFullScreen()">&times;</span>
+        <img id="fullScreenImage" src="" alt="Full Screen Image">
+        <div id="caption"></div>
+    </div>
+    <main >
+        <section class="container">
+            <div class="item"><img class="clickable-image"  src="./images/0573b1be6747d242ed32895912cb11cb.jpg" alt="Bunny"></div>
+            <div class="item"><img class="clickable-image" src="./images/18b260edc7649eb97376c1a287714507.jpg" alt="Boy"></div>
+            <div class="item"><img class="clickable-image" src="./images/2aff6e3b6a29004eedb92e96a3b6ac1d.jpg" alt="Dragon"></div>
+            <div class="item"><img class="clickable-image" src="./images/4ac72b1b71d0cc9d368811a86cd6c0b6.jpg" alt="Mushroom"></div>
+            <div class="item"><img class="clickable-image" src="./images/5240b2fad09753a71367b3620e593eb7.jpg" alt="Dragon"></div>
+            <div class="item"><img class="clickable-image" src="./images/54a44598bfae5bdb6fa2c31438a5b55c.jpg" alt="Autronut"></div>
+            <div class="item"><img class="clickable-image" src="./images/5ff6930066c9e7dc72b214b01a69831f.jpg" alt="Rabbit"></div>
+            <div class="item"><img class="clickable-image" src="./images/759385b3a1b2c8821386136203c9739c.jpg" alt="Watermelon"></div>
+            <div class="item"><img class="clickable-image" src="./images/81d6cca7366bce47b8ca59449f6fc040.jpg" alt="Dragon"></div>
+            <div class="item"><img class="clickable-image" src="./images/83d6ea3aa58cd5b7ea92666092bb5c52.jpg" alt="Bunny"></div>
+            <div class="item"><img class="clickable-image" src="./images/8a255ac2d2d153614ca0829d3566593c.jpg" alt="Bunny"></div>
+            <div class="item"><img class="clickable-image" src="./images/990af5b90d964df010c77d26777337ae.jpg" alt="Bunny"></div>
+            <div class="item"><img class="clickable-image" src="./images/b506db329f505f5afdab27545e20a0fb.jpg" alt="Bunny"></div>
+            <div class="item"><img class="clickable-image" src="./images/bc90c4393bc15aaa6cb5079030685c3d.jpg" alt="Bunny"></div>
+            <div class="item"><img class="clickable-image" src="./images/bccd2d4571dd4715a70175463d18b719.jpg" alt="Bunny"></div>
+            <div class="item"><img class="clickable-image" src="./images/c3c45fee1737521b7a5d671596482d98.jpg" alt="Bunny"></div>
+            <div class="item"><img class="clickable-image" src="./images/c45a658b6f79d429f6d3275b5914a037.jpg" alt="Bunny"></div>
+            <div class="item"><img class="clickable-image" src="./images/c60762f4bd8bfb287453038d1bcc8ac3.jpg" alt="Bunny"></div>
+            <div class="item"><img class="clickable-image" src="./images/d0fd686d9f97f4c8ee97e6f722f06ccc.jpg" alt="Bunny"></div>
+            <div class="item"><img class="clickable-image" src="./images/d4d524a5538902dfaf8d176e206bec7a.jpg" alt="Bunny"></div>
+            <div class="item"><img class="clickable-image" src="./images/f12fa401c9e77448cc48a89542ce5725.jpg" alt="Bunny"></div>
+            <div class="item"><img class="clickable-image" src="./images/f4c72614d34766e5fbd0e84424fb7fcd.jpg" alt="Bunny"></div>
+            <div class="item"><img class="clickable-image" src="./images/f65fef288ff2c5b4dfbec67ba0f37cf6.jpg" alt="Bunny"></div>
+            <div class="item"><img class="clickable-image" src="./images/flower.jpg" alt=""></div>
+            <div class="item"><img class="clickable-image" src="./images/Random Pictures Inspiration ΓÇô N29.jpeg"  alt=""></div>
+        </section>
+    </main>
+    <script>
+        function closeFullScreen() {
+            document.getElementById('fullScreenOverlay').style.display = 'none';
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+        const clickableImages = document.querySelectorAll('.clickable-image');
+        const fullScreenOverlay = document.getElementById('fullScreenOverlay');
+        const fullScreenImage = document.getElementById('fullScreenImage');
+        var captionText = document.getElementById("caption");
+
+        clickableImages.forEach(function (image) {
+            image.addEventListener('click', function () {
+                const imageUrl = this.src;
+                fullScreenImage.src = imageUrl;
+                captionText.innerHTML = this.alt;
+                fullScreenOverlay.style.display = 'flex';
+                
+            });
+        });
+    });
+    </script>
+</body>
+</html>
